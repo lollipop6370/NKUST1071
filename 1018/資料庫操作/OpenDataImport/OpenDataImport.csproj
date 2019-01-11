@@ -10,13 +10,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="App_Data\datagovtw_dataset_20181005.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
+    <ProjectReference Include="..\HTApplication\HTApplication.csproj" />
   </ItemGroup>
 
   <ItemGroup>

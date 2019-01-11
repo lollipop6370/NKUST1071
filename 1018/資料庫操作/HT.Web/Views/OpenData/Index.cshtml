@@ -1,0 +1,38 @@
+﻿@model List<HTCore.Models.OpenData>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>園區別</th>
+            <th>廠商名稱</th>
+            <th>地址</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.園區別</td>
+            <td>@item.廠商名稱</td>
+            <td>@item.地址</td>
+            <td>
+                <a class="btn btn-primary" href="/OpenData/Detail/@item.id">詳細</a>
+                <a class="btn btn-info" href="/OpenData/Edit/@item.id">編輯</a>
+            </td>
+        </tr>
+        }
+
+
+    </tbody>
+
+
+
+</table>

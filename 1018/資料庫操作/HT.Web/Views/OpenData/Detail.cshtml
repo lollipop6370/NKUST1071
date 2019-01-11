@@ -1,0 +1,35 @@
+﻿@model HTCore.Models.OpenData
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>Detail</h2>
+<div>
+    <h4>OpenData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.園區別)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.園區別)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.廠商名稱)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.廠商名稱)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.地址)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.地址)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+

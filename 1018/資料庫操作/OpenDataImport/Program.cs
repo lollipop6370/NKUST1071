@@ -1,4 +1,5 @@
-﻿using OpenDataImport.Models;
+﻿using HTCore.Models;
+using HTApplication.Service;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,18 +12,12 @@ namespace OpenDataImport
     {
         static void Main(string[] args)
         {
-            Service.ImportService importService = new Service.ImportService();
-
-            var nodes= importService.FindOpenData();
-
-            importService.ImportToDb(nodes);
-
+           /* ImportService importService = new ImportService.CreateForEF();
+            var nodes= importService.FindOpenDataFromDb();
             showOpenData(nodes);
-            Console.ReadKey();
+            Console.ReadKey();*/
 
         }
-
-        
 
 
 
@@ -30,13 +25,13 @@ namespace OpenDataImport
         {
 
             Console.WriteLine(string.Format("共收到{0}筆的資料", nodes.Count));
-            nodes.GroupBy(node => node.服務分類).ToList()
+            nodes.GroupBy(node => node.廠商名稱).ToList()
                 .ForEach(group =>
                 {
 
                     var key = group.Key;
                     var groupDatas = group.ToList();
-                    var message = $"服務分類:{key},共有{groupDatas.Count()}筆資料";
+                    var message = $"園區別:{key},共有{groupDatas.Count()}筆資料";
                     Console.WriteLine(message);
                 });
 
